@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex justify-content-center align-items-center " style="height:100vh ; background-image: url(asset/8c43645fe8d0ac164a6925448be32858.jpg);">
+        <div class="main-border align-items-center justify-content-around d-flex flex-column shadow-sm  bg-body rounded">
+            <div>
+                <input class="display-box rounded" type="text" id="display">
+          
+            </div>
+            <div class="inner-box d-flex flex-wrap justify-content-around">
+                <div class="key">
+                    mc
+
+                </div>
+                <div class="key">
+                    mr
+
+                </div>
+                <div class="key">
+                    m-
+
+                </div>
+                <div class="key">
+                    m+
+
+                </div>
+                <div class="key"  onclick="ac()" >
+                    AC
+
+                </div>
+                <div class="key">
+                    √x
+
+                </div>
+                <div class="key">
+                    %
+
+
+                </div>
+                <div class="key key-color"   onclick=" operator('/')">
+                    ÷ 
+
+                </div>
+                <div class="key"  onclick="getInputs(7)">
+                    7
+
+                </div>
+                <div class="key" onclick="getInputs(8)">
+                    8
+
+                </div>
+                <div class="key"  onclick="getInputs(9)">
+                    9
+
+                </div>
+                <div class="key key-color"  onclick= "operator('*')">
+                    × 
+
+                </div>
+                <div class="key"  onclick="getInputs(4)">
+                    4
+
+                </div>
+                <div class="key"  onclick="getInputs(5)">
+                    5
+
+                </div> <div class="key"  onclick="getInputs(6)">
+                    6
+
+                </div>
+                <div class="key key-color"   onclick=" operator('-')">
+                    -
+
+                </div>
+                <div class="key" onclick="getInputs(1)">
+                    1
+
+                </div>
+                <div class="key" onclick="getInputs(2)">
+                    2
+
+                </div>
+                <div class="key"  onclick="getInputs(3)">
+                    3
+
+                </div> 
+                <div class="key key-color"   onclick=" operator('+')" >
+                    +
+
+                </div>
+                <div class="key"  onclick="getInputs(0)">
+                    0
+
+                </div>
+                <div class="key"  onclick="getInputs(.)">
+                    .
+
+                </div>
+                <div class="key">
+                    +/-
+
+                </div>
+                <div class="key key-color"   onclick="sum()">
+                    =
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        var lastoperator = "";
+        var number1 = "";
+
+
+        function getInputs(num){
+           var displaytextbox = document.getElementById("display");
+            displaytextbox.value =displaytextbox.value + num;
+            var font = document.getElementById("display")
+            font.style.fontSize="x-large"
+     
+
+        }
+
+        function operator(operator){
+            lastoperator = operator
+            var displaytextbox = document.getElementById("display");
+            number1 =  displaytextbox.value;
+            displaytextbox.value="";
+            var font = document.getElementById("display")
+            font.style.fontSize="x-large"
+
+        }
+        function sum() {
+            var displaytextbox = document.getElementById("display");
+            var number2 = displaytextbox.value;
+            var result = "";
+            if (lastoperator == "+"){
+                result = Number(number1) + Number(number2);
+                
+            } else if (lastoperator == "*"){
+                result = Number(number1) * Number(number2);
+            } else if (lastoperator == "/"){
+                result = Number(number1) / Number(number2);
+            }else if (lastoperator == "-"){
+                result = Number(number1) - Number(number2);
+            }
+            displaytextbox.value = result;
+            lastoperator = "";
+            number1 = "";
+            var font = document.getElementById("display")
+            font.style.color="red"
+            font.style.fontWeight="500"
+            font.style.fontSize="xx-large"
+            
+            
+            
+
+        }
+        function ac(){
+            var displaytextbox = document.getElementById("display");
+            displaytextbox.value = ""
+
+        }
+
+    </script>
+  </body>
+</html>

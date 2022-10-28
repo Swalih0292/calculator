@@ -1,0 +1,35 @@
+.main-border{
+    height: 580px;
+    width: 450px;
+    border: 1px solid black;
+    background-color: #f0f0f0;;
+
+}
+.display-box{
+    width: 380px;
+    height: 70px ;
+    border: 1px solid black;
+}
+.inner-box{
+    width:380px ;
+    height: 450px;
+    
+}
+.key{
+    width: 80px;
+    height: 70px;
+   background-color: gainsboro;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 23px;
+}
+.key:hover{
+    border: 1px solid black;
+    
+}
+.key-color{
+    background-color: #FFCC00;;
+}
